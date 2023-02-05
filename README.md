@@ -1,6 +1,8 @@
 # Aware UI README
 
-This is a version of Aware UI designed to present its function as a Keynote. 
+**With Aware UI, we are combining differnent machine learning functions to create a UI that can be interacted with as "naturally" as possible. That is by being able to talk to it by just facing the screen (no hotword needed). Also, we want to dynamically show information based on the position of the user in the room. Aware UI is a coding project from Malte Fial and Johannes Rothkegel. It is part of a coding course at the HfG Schwäbisch Gmünd (Design university).**
+
+This is a version of Aware UI designed to present its functions as a Keynote. 
 It contains all working functions for the final product.
 
 These are the working functions of Aware UI:
