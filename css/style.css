@@ -1,0 +1,357 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sofia+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body {
+    height: 100vh;
+    width: 100vw;
+    margin: 0px;
+    padding: 0px;
+    background-color: black;
+}
+
+h1 {
+    font-family: "sf pro display";
+    font-size: 150px;
+}
+
+#wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    color: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+    transition: 1s;
+    transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
+    z-index: 10;
+}
+
+#toggleWrapper {
+    visibility: hidden
+}
+#Wrapper1 {
+    visibility: hidden
+}
+
+.slide {
+    height: 90vh;
+    position: absolute;
+    transition: 1s;
+    transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
+    opacity: 0;
+}
+
+.insert{
+    left: 0px;
+} 
+
+.dot {
+    width: 800px;
+    height: 800px;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: radial-gradient(black, rgba(0, 0, 0, 0.665), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0));
+    filter: contrast(3);
+    transition: 2s cubic-bezier(0.85, 0, 0.15, 1);
+    opacity: 0;
+    border-radius: 100%;
+
+}
+
+.cloudDot {
+    transition: 1s;
+    animation: idle-pulse 2s infinite ease-in-out alternate;
+    background: radial-gradient(black, rgba(0, 0, 0, 0.665), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0));
+    filter: contrast(3);
+    position: absolute;
+
+}
+
+#cloudDot1 {
+    width: 80vw;
+    height: 80vw;
+    top: -10vh;
+    left: -20vw;
+    position: absolute;
+        transition: 1s;
+
+}
+
+#cloudDot2 {
+    width: 80vw;
+    height: 80vw;
+    top: -20vw;
+    left: 60vw;
+    position: absolute;
+    transition: 1s;
+
+}
+
+#cloudDot3 {
+    width: 40vw;
+    height: 40vw;
+    top: 80vh;
+    left: 80vw;
+    position: absolute;
+    transition: 1s;
+
+}
+
+#cloudDot4 {
+    width: 80vw;
+    height: 80vw;
+    top: 60vh;
+    left: 60vw;
+    position: absolute;
+    transition: 1s;
+
+}
+
+@keyframes idle-pulse {
+    0% {
+        transform: scale(1);
+        opacity: 0.3;
+    }
+
+    100% {
+        transform: scale(1.2);
+        opacity: 0.7;
+    }
+}
+
+#background {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(163, 163, 163);
+}
+
+.halftone {
+    width: 100vw;
+    height: 100vh;
+    background: white;
+    position: relative;
+    filter: contrast(25000%);
+    overflow: hidden;
+    transform: translateZ(0);
+    /* force a HW accelerated layer */
+}
+
+.halftone>* {
+    filter: brightness(0.5) blur(4px);
+    /* animation: 10s animation-filter infinite alternate; */
+}
+
+.halftone::after {
+    content: '';
+    position: absolute;
+    top: -100%;
+    left: -100%;
+    right: -100%;
+    bottom: -100%;
+    background-blend-mode: multiply;
+    background:
+        radial-gradient(26px 26px, rgb(53, 53, 53), white),
+        radial-gradient(8px 8px, rgb(255, 255, 255), white),
+        radial-gradient(8px 8px, rgb(255, 255, 255), white);
+    background-size: 19px 19px;
+    mix-blend-mode: screen;
+    pointer-events: none;
+    transition: 1s ease-in-out transform;
+    z-index: 1;
+}
+
+#window {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30vw;
+    height: 60vh;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50vh;
+    left: 25vw;
+    /* background-color: rgb(163, 163, 163); */
+    /* border: 8px solid white; */
+    transition: 1s;
+    overflow: hidden;
+}
+
+#dotAnimation {
+    width: 0px;
+    height: 0px;
+    border-radius: 2000px;
+    background-color: white;
+    /* background: radial-gradient(50% 50% at 50% 50%, #ffffff 24.48%, #dadada 70.31%, rgb(163,163,163) 100%); */
+    transition: 1.5s;
+}
+
+#heading {
+    position: absolute;
+    top: 1vw;
+    left: 3vw;
+    font-size: 3vw;
+    font-weight: 500;
+    opacity: 0;
+}
+
+#text {
+    font-family: 'sf pro display';
+    position: absolute;
+    bottom: 1vw;
+    left: 3vw;
+    font-size: 1.1vw;
+    font-weight: 500;
+    opacity: 0;
+}
+
+.window_open {
+    animation-name: windowOpen;
+    animation-duration: 1.5s;
+    /* animation-delay: 3s; */
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+@keyframes windowOpen {
+    0% {
+        background-color: rgb(163, 163, 163);
+    }
+
+    50% {
+        background-color: rgb(87, 85, 85);
+    }
+
+    100% {
+        background-color: rgb(255, 255, 255);
+        
+    }
+}
+/* @keyframes windowOpen {
+    0% {
+        width: 0vw;
+    }
+
+    50% {
+        width: 40vw;
+        height: 0vw;
+    }
+
+    100% {
+        width: 40vw;
+        height: 60vw;
+        
+    }
+} */
+
+.dot_breathe {
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-radius: 100%;
+    background:radial-gradient(black, rgba(0, 0, 0, 0.665), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0));
+}
+
+#dot2 {
+    width: 800px;
+    height: 800px;
+    opacity: 0;
+    transition: 1s;
+}
+
+.breathe_animation {
+    animation-name: breathe;
+    animation-duration: 3s;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    animation-direction: alternate;
+}
+
+@keyframes breathe {
+    from {
+        transform: scale(0.7);
+        background: radial-gradient(50% 50% at 50% 50%, #A3A3A3 24.48%, #6d6d6d 70.31%, #6d6d6d 92.71%, #A3A3A3 100%);
+    }
+
+    to {
+        transform: scale(1.2);
+        background: radial-gradient(50% 50% at 50% 50%, #A3A3A3 24.48%, #6d6d6d 70.31%, #6d6d6d 92.71%, #A3A3A3 100%);
+    }
+}
+
+.rotate_animation {
+    animation: rotate 6s infinite linear,
+        /* Rotates the div */
+        elliptical 3s infinite  ease-in-out,
+        elliptical2 6s infinite  ease-in-out;
+    /* Animates the height */
+    animation-direction: normal;
+}
+
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+        background: radial-gradient(50% 50% at 50% 50%, rgba(163, 163, 163, 0) 41.67%, rgba(72, 72, 72, 0.828125) 68.75%, rgba(163, 163, 163, 0) 100%);
+
+    }
+    to {
+        transform: rotate(360deg);
+        background: radial-gradient(50% 50% at 50% 50%, rgba(163, 163, 163, 0) 41.67%, rgba(72, 72, 72, 0.828125) 68.75%, rgba(163, 163, 163, 0) 100%);
+
+    }
+}
+
+/* Animates the height to create an elliptical shape */
+@keyframes elliptical {
+    0% {
+        height: 30vw;
+        /* Original height */
+    }
+
+    50% {
+        height: 25vw;
+        /* Changes to half the original height */
+    }
+
+    100% {
+        height: 30vw;
+        /* Changes back to the original height */
+    }
+}
+
+@keyframes elliptical2 {
+    0% {
+        width: 30vw;
+        /* Original height */
+    }
+
+    50% {
+        width: 25vw;
+        /* Changes to half the original height */
+    }
+
+    100% {
+        width: 30vw;
+        /* Changes back to the original height */
+    }
+}
